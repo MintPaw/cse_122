@@ -2,7 +2,7 @@
 #include<math.h>
 #include<time.h>
 
-void sum(unsigned int k, unsigned int a[3]);
+void sum(unsigned int k, unsigned int a[2]);
 void test_sum(unsigned int k);
 
 int main()
@@ -22,24 +22,15 @@ int main()
 
 void test_sum(unsigned int k)
 {
-	unsigned int v[3];
+	unsigned int v[2];
 	time_t start = clock();
 	sum(k, v);
 	time_t end = clock();
-	printf("%d|%d|%d|%3.24lf\n", v[0], v[1], v[2], (double)(end - start)/CLOCKS_PER_SEC);
+	printf("%d|%d|%3.24lf\n", v[0], v[1], (double)(end - start)/CLOCKS_PER_SEC);
 }
 
-void sum(unsigned int k, unsigned int a[3])
+void sum(unsigned int k, unsigned int a[2])
 {
-	unsigned int t = 0;
-	a[0] = 1;
-	a[1] = k;
-
-	int i;
-	for (i = 1; i <= k; i++) {
-		a[0]++;
-		t += (3 * i - 1);
-	}
-	
-	a[2] = t;
+	a[0] = k;
+	a[1] = ((3 * k) * (k + 1)) / 2 - k;
 }

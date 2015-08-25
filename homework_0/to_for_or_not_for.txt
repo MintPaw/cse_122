@@ -1,0 +1,7 @@
+Without a for loop it didn't overflow for any number.
+
+Number after 10^5 cause an internal overflow in the for loop version.
+
+The k is not the same.
+
+The not-for loop version is the better one because doesn't overflow and it has complexity O(1).
